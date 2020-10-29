@@ -31,7 +31,7 @@ int main() {
 
 	while (1) {
 
-		printf("Izaberite:\n\tNovi element na pocetak liste->P\n\tNovi element na kraj liste->K\n\tPronadi element->N\n\tObrisi element->b\n\Izlaz iz programa->I\n");
+		printf("Izaberite:\n\tNovi element na pocetak liste->P\n\tNovi element na kraj liste->K\n\tPronadi element->N\n\tObrisi element->b\n\tIzlaz iz programa->I\n");
 		printf("Vas izbor: ");
 		scanf(" %c", &s);
 		switch (s) {
