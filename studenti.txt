@@ -1,0 +1,6 @@
+Ime i prezime:	Bodovi:
+Paulo Costa 	    9.99
+Jon Jones 	    8.56
+Justin Gaethje 	    8.99
+Pero Peric 	    4.56
+Ivo Ivic 	    1.21
