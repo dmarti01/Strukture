@@ -6,12 +6,12 @@
 typedef struct cvor* Stog;
 
 struct cvor {
-	char el;
+	int el;
 	Stog next;
 };
 
-void push(char x, Stog S);
-char pop(Stog S);
+void push(int x, Stog S);
+int pop(Stog S);
 void ispis(Stog S);
 
 
@@ -20,24 +20,22 @@ int main() {
 	Head.next = NULL;
 
 	FILE* dat;
-	char a[15],b[15];
-	int i,j,p,x,y,temp;
+	char a[15];
+	int j,x,y,temp,k;
+
 	dat = fopen("datoteka.txt", "r");
-	fgets(a, 15, dat);
-	//sscanf(dat, "%s", b);
-	printf("%s", a);
-	//printf("\n%s", b);
-	printf("\n");
+
 	j = 0;
-	for (i = 0;a[i] != NULL;i++)
+	while(!feof(dat))
 	{
-		if (a[i] <= '9' && a[i] >= '1')
+		fscanf(dat,"%s",a);
+		if (sscanf(a,"%d",&k)==1)
 			//printf("%c", a[i]); provjera
-			push(a[i]-48, &Head);
+			push(k, &Head);
 		else {
 			x = pop(&Head);
 			y = pop(&Head);
-			switch (a[i]) {
+			switch (a[0]) {
 			case'+':
 				temp = y + x;
 				break;
@@ -63,7 +61,7 @@ int main() {
 	fclose(dat);
 }
 
-void push(char x, Stog S) {
+void push(int x, Stog S) {
 	Stog q;
 
 	q = (Stog)malloc(sizeof(struct cvor));
@@ -72,7 +70,7 @@ void push(char x, Stog S) {
 	q->next = S->next;
 	S->next = q;
 }
-char pop(Stog S) {
+int pop(Stog S) {
 	int x = -1;
 	Stog temp;
 	if (S->next != NULL)
@@ -82,4 +80,5 @@ char pop(Stog S) {
 		S->next = temp->next;
 		free(temp);
 	}
+	return x;
 }
