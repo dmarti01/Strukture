@@ -1,3 +1,4 @@
+//prvi zadatak
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,20 +27,20 @@ int main() {
 	scanf_s("%d", &br);
 	osoba = (studenti*)malloc(br * sizeof(studenti));
 
-	if (feof(dat) == NULL)
+	if (feof(dat) == NULL)//provjera
 	{
 		printf("Greska u ispisu datoteke!!!\n");
 	}
 
 	for (i = 0;i < br;i++)
 	{
-		printf("Unose se podaci za %d. studenta\n", i + 1);
+		printf("Unose se podaci za %d. studenta\n", i + 1);//unos podataka
 		printf("Unesi ime i prezime studenta\n");
 		scanf("%s %s", ime,prez);
-		strcpy(impr, ime);
-		strcat(impr, " ");
-		strcat(impr, prez);
-		strcpy(osoba[i].imeprez, impr);
+		strcpy(impr, ime);//kopiraj
+		strcat(impr, " ");//pridruzi
+		strcat(impr, prez);//pridruzi
+		strcpy(osoba[i].imeprez, impr);//kopiraj
 		printf("Unesi bodove: ");
 		scanf_s("%lf", &bodovi);
 		osoba[i].bod = bodovi;
